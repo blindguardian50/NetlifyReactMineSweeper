@@ -1,0 +1,17 @@
+@mixin borders($left-top: white, $right-bottom: #7b7b7b) {
+  border-bottom: $right-bottom;
+  border-right: $right-bottom;
+  border-top: $left-top;
+  border-left: $left-top;
+  border-style: solid;
+  border-width: 4px;
+}
+
+@mixin buttonsPressed($left-top: #7b7b7b, $right-bottom: white) {
+  &:active {
+    border-bottom-color: $right-bottom;
+    border-right-color: $right-bottom;
+    border-top-color: $left-top;
+    border-left-color: $left-top;
+  }
+}

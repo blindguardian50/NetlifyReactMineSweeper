@@ -1,0 +1,105 @@
+@import '../../styles/index.scss';
+
+.App {
+  background-color: green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  padding: 3%;
+}
+
+.Game {
+  @include borders;
+  background: #c2c2c2;
+  padding: 16px;
+}
+
+.GameHeader {
+  @include borders;
+  padding: 10px 12px;
+  background: #c2c2c2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.GameBody {
+  @include borders;
+  margin-top: 16px;
+  background: #c2c2c2;
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+}
+
+.NumberDisplay {
+  width: 80px;
+  height: 48px;
+  color: green;
+  background-color: black;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Face {
+  @include borders;
+  @include buttonsPressed();
+  width: 52px;
+  height: 52px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.BoardButton {
+  @include borders;
+  @include buttonsPressed();
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+
+  span {
+    font-size: 18px;
+  }
+
+  &.visible {
+    border-color: #7b7b7b;
+    border-width: 1px;
+  }
+
+  &.value-1 {
+    color: blue;
+  }
+  &.value-2 {
+    color: green;
+  }
+  &.value-3 {
+    color: red;
+  }
+  &.value-4 {
+    color: purple;
+  }
+  &.value-5 {
+    color: maroon;
+  }
+  &.value-6 {
+    color: turquoise;
+  }
+  &.value-7 {
+    color: black;
+  }
+  &.value1 {
+    color: gray;
+  }
+}
