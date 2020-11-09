@@ -2,13 +2,21 @@ import React from 'react';
 import '../App/App.scss';
 import NumberDisplay from '../NumberDisplay';
 import Face from '../Face';
+import { FaceType } from '../../Types';
 
-const GameHeader: React.FC = () => {
+interface GameHeaderProps {
+  face: FaceType;
+  time: number;
+  onFaceClick: () => void;
+  bombsLeft: number;
+}
+
+const GameHeader: React.FC<GameHeaderProps> = (props: GameHeaderProps) => {
   return (
     <div className="GameHeader">
-      <NumberDisplay value={0} />
-      <Face></Face>
-      <NumberDisplay value={99} />
+      <NumberDisplay value={props.bombsLeft} />
+      <Face face={props.face} onFaceClick={props.onFaceClick}></Face>
+      <NumberDisplay value={props.time} />
     </div>
   );
 };

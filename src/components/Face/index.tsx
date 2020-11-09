@@ -1,10 +1,16 @@
 import React from 'react';
 import '../App/App.scss';
+import { FaceType } from '../../Types';
 
-const Face: React.FC = () => {
+interface GameHeaderProps {
+  face: FaceType;
+  onFaceClick: () => void;
+}
+
+const Face: React.FC<GameHeaderProps> = (props: GameHeaderProps) => {
   return (
-    <div className="Face">
-      <span>&#x1F64A;</span>
+    <div className="Face" onClick={props.onFaceClick}>
+      <span>{props.face}</span>
     </div>
   );
 };
