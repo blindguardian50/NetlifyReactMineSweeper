@@ -100,6 +100,7 @@ const Game: React.FC = () => {
     setWon(false);
     setLost(false);
     setFace(FaceType.chilled);
+    setBombsLeft(NUMBER_OF_BOMBS);
   };
 
   useEffect(() => {
